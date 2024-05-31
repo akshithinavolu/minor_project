@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            background-color: black;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            background-image: url('https://th.bing.com/th?id=OIP.up5_i9wXYUoPhwx9CGle1gHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .main h2, .main h3, label {
+            color: whitesmoke;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .gender-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .gender-options label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .gender-options input {
+            margin-right: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .gender-options {
+                flex-direction: column;
+            }
+
+            .gender-options label {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>TechVolution 2024 Registration Form</h2>
+        <form action="">
+            <label for="first" class="color">Full Name:</label>
+            <input type="text" id="first" name="first" placeholder="Enter Full Name" required>
+
+            <label for="dob" class="color">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br>
+
+            <label class="color">Gender:</label>
+                <div>
+                    <label class="color"><input type="radio" name="gender" value="male" required> Male</label>
+                    <label class="color"><input type="radio" name="gender" value="female" required> Female</label>
+                    <label class="color"><input type="radio" name="gender" value="nonbinary" required> Non-binary</label>
+                </div>
+
+
+            <h3 class="color">Contact Details:</h3>
+            <label for="email" class="color">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+            <label for="Ph-no" class="color">Mobile Number:</label>
+            <input type="text" id="Ph-no" name="Ph-no" maxlength="10" placeholder="entet your mobile number" required>
+
+            <h3 class="color">Address:</h3>
+            <label for="address" class="color">Street Address:</label>
+            <input type="text" id="address" name="address" placeholder="enter your address" required>
+
+            <label for="city" class="color">City:</label>
+            <input type="text" id="city" name="city" placeholder="enter city" required>
+
+            <label for="state" class="color">State:</label>
+            <select id="state" name="state" aria-placeholder="enter state" required>
+                <option value="" class="size">Select State</option>
+                <option value="Telangana" class="size">Telangana</option>
+                <option value="Andhra Pradesh" class="size">Andhra Pradesh</option>
+                <option value="TamilNadu" class="size">TamilNadu</option>
+                <option value="Kerala" class="size">Kerala</option>
+            </select>
+
+            <label for="zip" class="color">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="enter zipcode" required>
+
+            <h3 class="color">Additional Information:</h3>
+            <label for="event" class="color">Event Preference:</label>
+            <select id="event" name="event" required>
+                <option value="" class="size">Select Event</option>
+                <option value="transport engineering" class="size">Transport Engineering</option>
+                <option value="road safety engineering" class="size">Road Safety Engineering</option>
+                <option value="project and program management" class="size">Project and Program Management</option>
+                <option value="property development and related" class="size">Property Development and Related</option>
+                <option value="building and structural engineering" class="size">Building and Structural Engineering</option>
+            </select>
+
+            <label for="die" class="color">Dietary Restrictions:</label>
+            <input type="text" id="die" name="die" required>
+
+            <label for="shirt-size" class="color">T-Shirt Size:</label>
+            <select id="shirt-size" name="shirt-size" required>
+                <option value="" class="size">Select T-Shirt Size</option>
+                <option value="small" class="size">Small</option>
+                <option value="medium" class="size">Medium</option>
+                <option value="large" class="size">Large</option>
+            </select>
+
+            <button type="submit" onclick="register()">Submit</button>
+        </form>
+        <div id="message"></div>
+        <script>
+            function register() {
+                const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+            
+            // Clear previous messages
+            messageDiv.innerHTML = '';
+            messageDiv.innerHTML = 'Registration successful!';
+            messageDiv.style.color = 'green';
+            
+            
+                
+            }
+        </script>
+    </div>
+</body>
+</html>
